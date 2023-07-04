@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2714651326D2358F91D2B341 /* Pods_YukaLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E20CBB1BD9FDCD89CC6D88A /* Pods_YukaLike.framework */; };
 		377E00B22922315E00E76B79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E00B12922315E00E76B79 /* AppDelegate.swift */; };
 		377E00B42922315E00E76B79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E00B32922315E00E76B79 /* SceneDelegate.swift */; };
 		377E00B62922315E00E76B79 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E00B52922315E00E76B79 /* RootViewController.swift */; };
 		377E00BB2922315F00E76B79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 377E00BA2922315F00E76B79 /* Assets.xcassets */; };
 		377E00BE2922315F00E76B79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377E00BC2922315F00E76B79 /* LaunchScreen.storyboard */; };
+		E62A07122A541A5500A97F32 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07112A541A5500A97F32 /* HTTPClient.swift */; };
+		E62A07142A541A7900A97F32 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07132A541A7900A97F32 /* EndPoint.swift */; };
+		E62A07162A541B7600A97F32 /* HTTPRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07152A541B7600A97F32 /* HTTPRequestError.swift */; };
+		E62A07182A541B9200A97F32 /* HTTPRequestErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07172A541B9200A97F32 /* HTTPRequestErrorMapper.swift */; };
+		E62A071B2A541BCB00A97F32 /* RESTProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A071A2A541BCB00A97F32 /* RESTProductResponse.swift */; };
+		E62A071E2A541C1600A97F32 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A071D2A541C1600A97F32 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,15 @@
 		377E00BA2922315F00E76B79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		377E00BD2922315F00E76B79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		377E00BF2922315F00E76B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E20CBB1BD9FDCD89CC6D88A /* Pods_YukaLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YukaLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C52FC53322568E6A896B8DC4 /* Pods-YukaLike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YukaLike.release.xcconfig"; path = "Target Support Files/Pods-YukaLike/Pods-YukaLike.release.xcconfig"; sourceTree = "<group>"; };
+		D5F5CA5C3E8901D03B6A50FC /* Pods-YukaLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YukaLike.debug.xcconfig"; path = "Target Support Files/Pods-YukaLike/Pods-YukaLike.debug.xcconfig"; sourceTree = "<group>"; };
+		E62A07112A541A5500A97F32 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		E62A07132A541A7900A97F32 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		E62A07152A541B7600A97F32 /* HTTPRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestError.swift; sourceTree = "<group>"; };
+		E62A07172A541B9200A97F32 /* HTTPRequestErrorMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestErrorMapper.swift; sourceTree = "<group>"; };
+		E62A071A2A541BCB00A97F32 /* RESTProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTProductResponse.swift; sourceTree = "<group>"; };
+		E62A071D2A541C1600A97F32 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2714651326D2358F91D2B341 /* Pods_YukaLike.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +57,8 @@
 			children = (
 				377E00B02922315E00E76B79 /* YukaLike */,
 				377E00AF2922315E00E76B79 /* Products */,
+				5152C4443E248D97296492B2 /* Pods */,
+				84D513A63EA2787DF3451A81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +73,70 @@
 		377E00B02922315E00E76B79 /* YukaLike */ = {
 			isa = PBXGroup;
 			children = (
+				E62A07202A541E3B00A97F32 /* Controllers */,
+				E62A071F2A541D7E00A97F32 /* Views */,
+				E62A071C2A541C0600A97F32 /* Extension */,
+				E62A07192A541BC300A97F32 /* Model */,
 				377E00B12922315E00E76B79 /* AppDelegate.swift */,
 				377E00B32922315E00E76B79 /* SceneDelegate.swift */,
-				377E00B52922315E00E76B79 /* RootViewController.swift */,
 				377E00BA2922315F00E76B79 /* Assets.xcassets */,
 				377E00BC2922315F00E76B79 /* LaunchScreen.storyboard */,
 				377E00BF2922315F00E76B79 /* Info.plist */,
+				E62A07112A541A5500A97F32 /* HTTPClient.swift */,
+				E62A07132A541A7900A97F32 /* EndPoint.swift */,
+				E62A07152A541B7600A97F32 /* HTTPRequestError.swift */,
+				E62A07172A541B9200A97F32 /* HTTPRequestErrorMapper.swift */,
 			);
 			path = YukaLike;
+			sourceTree = "<group>";
+		};
+		5152C4443E248D97296492B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5F5CA5C3E8901D03B6A50FC /* Pods-YukaLike.debug.xcconfig */,
+				C52FC53322568E6A896B8DC4 /* Pods-YukaLike.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84D513A63EA2787DF3451A81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E20CBB1BD9FDCD89CC6D88A /* Pods_YukaLike.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E62A07192A541BC300A97F32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E62A071A2A541BCB00A97F32 /* RESTProductResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E62A071C2A541C0600A97F32 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E62A071D2A541C1600A97F32 /* Result.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E62A071F2A541D7E00A97F32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E62A07202A541E3B00A97F32 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				377E00B52922315E00E76B79 /* RootViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 377E00C22922315F00E76B79 /* Build configuration list for PBXNativeTarget "YukaLike" */;
 			buildPhases = (
+				B5931EC5646EC86D981A71C4 /* [CP] Check Pods Manifest.lock */,
 				377E00AA2922315E00E76B79 /* Sources */,
 				377E00AB2922315E00E76B79 /* Frameworks */,
 				377E00AC2922315E00E76B79 /* Resources */,
+				7D96A75BE80556BCD33B1211 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,13 +206,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D96A75BE80556BCD33B1211 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YukaLike/Pods-YukaLike-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YukaLike/Pods-YukaLike-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YukaLike/Pods-YukaLike-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5931EC5646EC86D981A71C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YukaLike-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		377E00AA2922315E00E76B79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E62A071E2A541C1600A97F32 /* Result.swift in Sources */,
 				377E00B62922315E00E76B79 /* RootViewController.swift in Sources */,
 				377E00B22922315E00E76B79 /* AppDelegate.swift in Sources */,
+				E62A071B2A541BCB00A97F32 /* RESTProductResponse.swift in Sources */,
+				E62A07162A541B7600A97F32 /* HTTPRequestError.swift in Sources */,
+				E62A07182A541B9200A97F32 /* HTTPRequestErrorMapper.swift in Sources */,
+				E62A07142A541A7900A97F32 /* EndPoint.swift in Sources */,
+				E62A07122A541A5500A97F32 /* HTTPClient.swift in Sources */,
 				377E00B42922315E00E76B79 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +395,7 @@
 		};
 		377E00C32922315F00E76B79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5F5CA5C3E8901D03B6A50FC /* Pods-YukaLike.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +427,7 @@
 		};
 		377E00C42922315F00E76B79 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C52FC53322568E6A896B8DC4 /* Pods-YukaLike.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
