@@ -62,7 +62,6 @@ class HTTPClient {
                     }
                 }
             }
-
             task.resume()
         }
 }
