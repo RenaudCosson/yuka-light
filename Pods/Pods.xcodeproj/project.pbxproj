@@ -76,7 +76,7 @@
 		28A9FE2CE128B8B06607624BDBC18C24 /* UILayoutGuide+Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutGuide+Constraints.swift"; path = "Modules/ADUtils/UILayoutGuide+Constraints.swift"; sourceTree = "<group>"; };
 		3E85350C27D1DE775FF6A9463EA95D96 /* AnyObject+Synchronize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AnyObject+Synchronize.swift"; path = "Modules/ADUtils/AnyObject+Synchronize.swift"; sourceTree = "<group>"; };
 		450420A3CDFF4007D31500E6B8A8104A /* Geometry+Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Geometry+Utilities.swift"; path = "Modules/ADUtils/Geometry+Utilities.swift"; sourceTree = "<group>"; };
-		4AA19462617A8F77EEB1CD989C0F0C26 /* Pods-YukaLike */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-YukaLike"; path = Pods_YukaLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AA19462617A8F77EEB1CD989C0F0C26 /* Pods_YukaLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YukaLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		506A19F90D429C232E072FDECAD16E31 /* String+Localization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Localization.swift"; path = "Modules/ADUtils/String+Localization.swift"; sourceTree = "<group>"; };
 		55914D10B8824B87207024DA897F2FDB /* MKMapView+Dequeuing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MKMapView+Dequeuing.swift"; path = "Modules/ADUtils/MKMapView+Dequeuing.swift"; sourceTree = "<group>"; };
 		55A704D1B16ED8CB717C9EA211864630 /* Array+Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Filter.swift"; path = "Modules/ADUtils/Array+Filter.swift"; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		9469ABDB991594C539CFF960077930E5 /* ADUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ADUtils.release.xcconfig; sourceTree = "<group>"; };
 		972A51A3F955F13D6538E376B50E5522 /* UIView+NibLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+NibLoader.swift"; path = "Modules/ADUtils/UIView+NibLoader.swift"; sourceTree = "<group>"; };
 		9D6DD6F70AF23371F0AD0B3C8AA7DF9D /* Pods-YukaLike-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YukaLike-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DD8C0E110AB96928917A3E8F68C0D26 /* ADUtils-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ADUtils-umbrella.h"; sourceTree = "<group>"; };
 		9EEF5E8A7D8592021402F1C942522CB5 /* UIView+PreferredLayoutSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+PreferredLayoutSize.swift"; path = "Modules/ADUtils/UIView+PreferredLayoutSize.swift"; sourceTree = "<group>"; };
 		A13F15744677A30F776917E5D18C9F74 /* PropertyListArchiver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PropertyListArchiver.swift; path = Modules/ADUtils/PropertyListArchiver.swift; sourceTree = "<group>"; };
@@ -272,7 +272,6 @@
 				32CC33970F03AB374F909C212F80F8DC /* Support Files */,
 				277F1313CD8014C36C077326CC6FB62C /* Swift */,
 			);
-			name = ADUtils;
 			path = ADUtils;
 			sourceTree = "<group>";
 		};
@@ -291,7 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				5F2671319B7DD0974C1D5CCC58D9EEF8 /* ADUtils */,
-				4AA19462617A8F77EEB1CD989C0F0C26 /* Pods-YukaLike */,
+				4AA19462617A8F77EEB1CD989C0F0C26 /* Pods_YukaLike.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,7 +341,7 @@
 			);
 			name = "Pods-YukaLike";
 			productName = Pods_YukaLike;
-			productReference = 4AA19462617A8F77EEB1CD989C0F0C26 /* Pods-YukaLike */;
+			productReference = 4AA19462617A8F77EEB1CD989C0F0C26 /* Pods_YukaLike.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F30DE9A9E70541BF37BE89DA72385344 /* ADUtils */ = {

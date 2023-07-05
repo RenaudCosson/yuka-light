@@ -6,5 +6,4 @@ target 'YukaLike' do
   use_frameworks!
 
   # Pods for YukaLike
-	pod 'ADUtils', '~> 10.0'
 end
