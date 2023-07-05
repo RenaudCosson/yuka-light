@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import ADUtils
+//import ADUtils
 
 class RootViewController: UIViewController {
     
@@ -23,12 +23,16 @@ class RootViewController: UIViewController {
         setup()
     }
     
+    override func viewDidLayoutSubviews() {
+        
+    }
+    
     // MARK: - Private
     
     private func setup() {
         // Do the setup here.
-        setupLabel()
         setupStackView()
+        setupLabel()
         view.backgroundColor = UIColor(resource: .customGradiant)
     }
     
@@ -36,8 +40,8 @@ class RootViewController: UIViewController {
         view.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 125),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -81)
         ])
     }
     
@@ -49,14 +53,15 @@ class RootViewController: UIViewController {
         stackView.addArrangedSubview(validateButton)
         stackView.backgroundColor = .white
         stackView.layer.cornerRadius = 24
-        stackView.layoutMargins = UIEdgeInsets(value: 24)
+        stackView.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
         stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.spacing = 24
         
         NSLayoutConstraint.activate([
-            stackView.heightAnchor.constraint(equalToConstant: 208),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            stackView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor)
         ])
     }
     
@@ -77,23 +82,17 @@ class RootViewController: UIViewController {
         return label
     }
     
-    private func createProductIdTextField() -> UITextField {
-        let textField = UITextField()
-        textField.clipsToBounds = true
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "identifiant produit"
-        textField.borderStyle = .roundedRect
-        return textField
+    private func createProductIdTextField() -> UIView {
+        let textView = CutomeTextField()
+        textView.textField.placeholder = "identifiant produit"
+        textView.textField.clearButtonMode = .whileEditing
+        return textView
     }
     
     private func createValidateButton() -> UIButton {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        let button = ComfirmedButtonView()
         button.setTitle("Confirmer", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
-        button.ad_constrain(to: CGSize(width: 295, height: 44))
-        button.backgroundColor = UIColor(resource: .customGreen)
-        button.layer.cornerRadius = 24
         button.layer.shadowColor  = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.5
         button.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -106,11 +105,17 @@ class RootViewController: UIViewController {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
         return stackView
     }
     
     @objc func action(_ sender: UIButton) {
         print(sender.titleLabel?.text ?? "")
+    }
+    
+    private func comfirmedButton() -> UIView {
+        let view = UIView()
+        view.addSubview(validateButton)
+        
+        return view
     }
 }

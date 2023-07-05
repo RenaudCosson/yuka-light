@@ -19,6 +19,8 @@
 		E62A07182A541B9200A97F32 /* HTTPRequestErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07172A541B9200A97F32 /* HTTPRequestErrorMapper.swift */; };
 		E62A071B2A541BCB00A97F32 /* RESTProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A071A2A541BCB00A97F32 /* RESTProductResponse.swift */; };
 		E62A071E2A541C1600A97F32 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A071D2A541C1600A97F32 /* Result.swift */; };
+		E62A07232A555C0500A97F32 /* ComfirmedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07222A555C0500A97F32 /* ComfirmedButtonView.swift */; };
+		E62A07262A5569D200A97F32 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07252A5569D200A97F32 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		E62A07172A541B9200A97F32 /* HTTPRequestErrorMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestErrorMapper.swift; sourceTree = "<group>"; };
 		E62A071A2A541BCB00A97F32 /* RESTProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTProductResponse.swift; sourceTree = "<group>"; };
 		E62A071D2A541C1600A97F32 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E62A07222A555C0500A97F32 /* ComfirmedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmedButtonView.swift; sourceTree = "<group>"; };
+		E62A07252A5569D200A97F32 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,6 @@
 				D5F5CA5C3E8901D03B6A50FC /* Pods-YukaLike.debug.xcconfig */,
 				C52FC53322568E6A896B8DC4 /* Pods-YukaLike.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,9 +137,27 @@
 		E62A07202A541E3B00A97F32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E62A07242A5569C100A97F32 /* CustomTextfield */,
+				E62A07212A555BCF00A97F32 /* ComfirmedButtonView */,
 				377E00B52922315E00E76B79 /* RootViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E62A07212A555BCF00A97F32 /* ComfirmedButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				E62A07222A555C0500A97F32 /* ComfirmedButtonView.swift */,
+			);
+			path = ComfirmedButtonView;
+			sourceTree = "<group>";
+		};
+		E62A07242A5569C100A97F32 /* CustomTextfield */ = {
+			isa = PBXGroup;
+			children = (
+				E62A07252A5569D200A97F32 /* CustomTextField.swift */,
+			);
+			path = CustomTextfield;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +190,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					377E00AD2922315E00E76B79 = {
 						CreatedOnToolsVersion = 14.1;
@@ -254,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E62A071E2A541C1600A97F32 /* Result.swift in Sources */,
+				E62A07262A5569D200A97F32 /* CustomTextField.swift in Sources */,
 				377E00B62922315E00E76B79 /* RootViewController.swift in Sources */,
 				377E00B22922315E00E76B79 /* AppDelegate.swift in Sources */,
 				E62A071B2A541BCB00A97F32 /* RESTProductResponse.swift in Sources */,
@@ -262,6 +284,7 @@
 				E62A07142A541A7900A97F32 /* EndPoint.swift in Sources */,
 				E62A07122A541A5500A97F32 /* HTTPClient.swift in Sources */,
 				377E00B42922315E00E76B79 /* SceneDelegate.swift in Sources */,
+				E62A07232A555C0500A97F32 /* ComfirmedButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +338,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -375,6 +399,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
