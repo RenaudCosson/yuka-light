@@ -21,6 +21,7 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupBackButton()
     }
     
     override func viewDidLayoutSubviews() {
@@ -29,6 +30,12 @@ class RootViewController: UIViewController {
     
     // MARK: - Setup
     
+    private func setupBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Home"
+        backItem.tintColor = .white
+        self.navigationItem.backBarButtonItem = backItem
+    }
     
     private func setup() {
         // Do the setup here.
@@ -125,8 +132,11 @@ class RootViewController: UIViewController {
     // MARK: Navigation
 
     private func navigateToProductDetails() {
-        self.navigationController?.present(ProductDetailsViewController(), animated: true)
+        self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
       }
-    
-    
+}
+
+
+#Preview {
+    RootViewController()
 }

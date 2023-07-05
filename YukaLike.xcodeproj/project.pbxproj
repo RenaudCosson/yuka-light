@@ -21,6 +21,7 @@
 		E62A07232A555C0500A97F32 /* ComfirmedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07222A555C0500A97F32 /* ComfirmedButtonView.swift */; };
 		E62A07262A5569D200A97F32 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07252A5569D200A97F32 /* CustomTextField.swift */; };
 		E62A072A2A55745C00A97F32 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07292A55745C00A97F32 /* ProductDetailsViewController.swift */; };
+		E62A072D2A5598E000A97F32 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E62A07222A555C0500A97F32 /* ComfirmedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmedButtonView.swift; sourceTree = "<group>"; };
 		E62A07252A5569D200A97F32 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E62A07292A55745C00A97F32 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		E62A07202A541E3B00A97F32 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E62A072B2A5598CB00A97F32 /* Cells */,
 				E62A07242A5569C100A97F32 /* CustomTextfield */,
 				E62A07212A555BCF00A97F32 /* ComfirmedButtonView */,
 				377E00B52922315E00E76B79 /* RootViewController.swift */,
@@ -137,6 +140,14 @@
 				E62A07252A5569D200A97F32 /* CustomTextField.swift */,
 			);
 			path = CustomTextfield;
+			sourceTree = "<group>";
+		};
+		E62A072B2A5598CB00A97F32 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 				E62A072A2A55745C00A97F32 /* ProductDetailsViewController.swift in Sources */,
 				377E00B22922315E00E76B79 /* AppDelegate.swift in Sources */,
 				E62A071B2A541BCB00A97F32 /* RESTProductResponse.swift in Sources */,
+				E62A072D2A5598E000A97F32 /* IngredientTableViewCell.swift in Sources */,
 				E62A07162A541B7600A97F32 /* HTTPRequestError.swift in Sources */,
 				E62A07182A541B9200A97F32 /* HTTPRequestErrorMapper.swift in Sources */,
 				E62A07142A541A7900A97F32 /* EndPoint.swift in Sources */,
@@ -368,6 +380,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +413,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
