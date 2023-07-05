@@ -41,7 +41,7 @@ class HTTPClient {
             completion(.success(data))
         }.resume()
     }
-    
+
     func downloadImage(endpoint: Endpoint, completion: @escaping (Result<URL, HTTPRequestError>) -> Void) {
             guard let url = URL(string: endpoint.path) else {
                 completion(.failure(.invalidUrl))

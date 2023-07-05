@@ -19,15 +19,15 @@ class IngredientTableViewCell: UITableViewCell {
         setupPercent()
         setupImage()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+
     private func setupTitle() {
         title.text = "High fructose corn syrup"
         title.textColor = .black
@@ -39,7 +39,7 @@ class IngredientTableViewCell: UITableViewCell {
             title.leftAnchor.constraint(equalTo: leftAnchor, constant: 20)
         ])
     }
-    
+
     private func setupPercent() {
         percent.textColor = .gray
         
@@ -51,7 +51,7 @@ class IngredientTableViewCell: UITableViewCell {
             percent.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
     }
-    
+
     private func setupImage() {
         image.backgroundColor = UIColor(resource: .customGreen)
         
@@ -64,12 +64,11 @@ class IngredientTableViewCell: UITableViewCell {
             image.centerYAnchor.constraint(greaterThanOrEqualTo: centerYAnchor)
         ])
     }
-    
+
     func configure(with ingredient: Ingredient) {
         self.title.text = ingredient.title
         self.percent.text = "\(ingredient.percent)%"
     }
-
 }
 
 

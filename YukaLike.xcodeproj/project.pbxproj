@@ -74,6 +74,7 @@
 		377E00B02922315E00E76B79 /* YukaLike */ = {
 			isa = PBXGroup;
 			children = (
+				E62A072E2A55AF2800A97F32 /* Services */,
 				E62A07202A541E3B00A97F32 /* Controllers */,
 				E62A071F2A541D7E00A97F32 /* Views */,
 				E62A071C2A541C0600A97F32 /* Extension */,
@@ -83,10 +84,6 @@
 				377E00BA2922315F00E76B79 /* Assets.xcassets */,
 				377E00BC2922315F00E76B79 /* LaunchScreen.storyboard */,
 				377E00BF2922315F00E76B79 /* Info.plist */,
-				E62A07112A541A5500A97F32 /* HTTPClient.swift */,
-				E62A07132A541A7900A97F32 /* EndPoint.swift */,
-				E62A07152A541B7600A97F32 /* HTTPRequestError.swift */,
-				E62A07172A541B9200A97F32 /* HTTPRequestErrorMapper.swift */,
 			);
 			path = YukaLike;
 			sourceTree = "<group>";
@@ -148,6 +145,17 @@
 				E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E62A072E2A55AF2800A97F32 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E62A07112A541A5500A97F32 /* HTTPClient.swift */,
+				E62A07132A541A7900A97F32 /* EndPoint.swift */,
+				E62A07152A541B7600A97F32 /* HTTPRequestError.swift */,
+				E62A07172A541B9200A97F32 /* HTTPRequestErrorMapper.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
