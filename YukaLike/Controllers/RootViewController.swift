@@ -27,7 +27,8 @@ class RootViewController: UIViewController {
         
     }
     
-    // MARK: - Private
+    // MARK: - Setup
+    
     
     private func setup() {
         // Do the setup here.
@@ -64,6 +65,8 @@ class RootViewController: UIViewController {
             stackView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor)
         ])
     }
+    
+    // MARK: - Private
     
     private func createTitleLabel() -> UILabel {
         let label = UILabel()
@@ -108,8 +111,8 @@ class RootViewController: UIViewController {
         return stackView
     }
     
-    @objc func action(_ sender: UIButton) {
-        print(sender.titleLabel?.text ?? "")
+    @objc private func action(_ sender: UIButton) {
+//        navigateToProductDetails()
     }
     
     private func comfirmedButton() -> UIView {
@@ -118,4 +121,12 @@ class RootViewController: UIViewController {
         
         return view
     }
+    // MARK: Navigation
+    
+    private func navigateToProductDetails() {
+          // À compléter
+        self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
+      }
+    
+    
 }
