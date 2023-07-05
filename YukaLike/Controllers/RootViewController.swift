@@ -112,7 +112,7 @@ class RootViewController: UIViewController {
     }
     
     @objc private func action(_ sender: UIButton) {
-//        navigateToProductDetails()
+        navigateToProductDetails()
     }
     
     private func comfirmedButton() -> UIView {
@@ -121,11 +121,11 @@ class RootViewController: UIViewController {
         
         return view
     }
+
     // MARK: Navigation
-    
+
     private func navigateToProductDetails() {
-          // À compléter
-        self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
+        self.navigationController?.present(ProductDetailsViewController(), animated: true)
       }
     
     
