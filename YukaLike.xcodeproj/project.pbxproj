@@ -22,6 +22,8 @@
 		E62A07262A5569D200A97F32 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07252A5569D200A97F32 /* CustomTextField.swift */; };
 		E62A072A2A55745C00A97F32 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A07292A55745C00A97F32 /* ProductDetailsViewController.swift */; };
 		E62A072D2A5598E000A97F32 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */; };
+		E62A07302A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A072F2A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift */; };
+		E62A07322A55CBAD00A97F32 /* ProductDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62A07312A55CBAD00A97F32 /* ProductDescriptionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		E62A07252A5569D200A97F32 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E62A07292A55745C00A97F32 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		E62A072F2A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		E62A07312A55CBAD00A97F32 /* ProductDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */,
+				E62A072F2A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift */,
+				E62A07312A55CBAD00A97F32 /* ProductDescriptionTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				377E00BE2922315F00E76B79 /* LaunchScreen.storyboard in Resources */,
+				E62A07322A55CBAD00A97F32 /* ProductDescriptionTableViewCell.xib in Resources */,
 				377E00BB2922315F00E76B79 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +247,7 @@
 				E62A07142A541A7900A97F32 /* EndPoint.swift in Sources */,
 				E62A07122A541A5500A97F32 /* HTTPClient.swift in Sources */,
 				377E00B42922315E00E76B79 /* SceneDelegate.swift in Sources */,
+				E62A07302A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift in Sources */,
 				E62A07232A555C0500A97F32 /* ComfirmedButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

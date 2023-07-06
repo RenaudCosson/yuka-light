@@ -24,16 +24,12 @@ class RootViewController: UIViewController {
         setupBackButton()
     }
     
-    override func viewDidLayoutSubviews() {
-        
-    }
-    
     // MARK: - Setup
     
     private func setupBackButton() {
         let backItem = UIBarButtonItem()
-        backItem.title = "Home"
-        backItem.tintColor = .white
+        backItem.title = ""
+        backItem.tintColor = .orange
         self.navigationItem.backBarButtonItem = backItem
     }
     
@@ -118,7 +114,7 @@ class RootViewController: UIViewController {
         return stackView
     }
     
-    @objc private func action(_ sender: UIButton) {
+    @objc private func action() {
         navigateToProductDetails()
     }
     

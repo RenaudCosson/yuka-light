@@ -11,7 +11,7 @@ class IngredientTableViewCell: UITableViewCell {
     
     var title = UILabel()
     var percent = UILabel()
-    let image = UIView()
+    let image = UIImageView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -53,8 +53,6 @@ class IngredientTableViewCell: UITableViewCell {
     }
 
     private func setupImage() {
-        image.backgroundColor = UIColor(resource: .customGreen)
-        
         image.translatesAutoresizingMaskIntoConstraints = false
         addSubview(image)
         NSLayoutConstraint.activate([
@@ -68,12 +66,15 @@ class IngredientTableViewCell: UITableViewCell {
     func configure(with ingredient: Ingredient) {
         self.title.text = ingredient.title
         self.percent.text = "\(ingredient.percent)%"
+        self.image.image = UIImage(resource: .logo)
     }
 }
 
 
 struct Ingredient {
     let title: String
+    let subtile: String
     let percent: Int
-    let image: UIImage?
+    let imageProduct: UIImage
+    let imageNutriscore: UIImage
 }
