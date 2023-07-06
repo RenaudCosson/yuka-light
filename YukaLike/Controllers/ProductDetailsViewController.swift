@@ -89,6 +89,7 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
             cell.layer.shadowColor = UIColor.gray.cgColor
             cell.layer.shadowOpacity = 0.5
             cell.layer.shadowOffset = CGSize(width: 0, height: 5)
+            cell.isUserInteractionEnabled = false
 
             return cell
         } else if indexPath.row == 0 {
@@ -99,6 +100,7 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
             cell.layer.cornerRadius = 24
             cell.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             cell.clipsToBounds = true
+            cell.isUserInteractionEnabled = false
 
             return cell
         } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
@@ -110,12 +112,14 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
             cell.layer.shadowColor = UIColor.gray.cgColor
             cell.layer.shadowOpacity = 0.5
             cell.layer.shadowOffset = CGSize(width: 0, height: 5)
+            cell.isUserInteractionEnabled = false
 
             return cell
         } else {
             // other cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
             cell.configure(with: ingredient)
+            cell.isUserInteractionEnabled = false
 
             return cell
         }
