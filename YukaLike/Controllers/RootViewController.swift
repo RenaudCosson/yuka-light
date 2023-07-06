@@ -45,7 +45,7 @@ class RootViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -81)
+            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 81)
         ])
     }
     

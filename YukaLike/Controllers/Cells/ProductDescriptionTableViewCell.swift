@@ -27,5 +27,4 @@ class ProductDescriptionTableViewCell: UITableViewCell {
         self.scoreUIimageView.image = ingredient.imageNutriscore
 
     }
-
 }

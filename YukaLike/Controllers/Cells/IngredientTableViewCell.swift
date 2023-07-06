@@ -12,12 +12,11 @@ class IngredientTableViewCell: UITableViewCell {
     var title = UILabel()
     var percent = UILabel()
     let image = UIImageView()
+    let containerView = UIView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupTitle()
-        setupPercent()
-        setupImage()
+        setup()
     }
 
     required init?(coder: NSCoder) {
@@ -28,38 +27,60 @@ class IngredientTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    private func setup() {
+        setupTitle()
+        setupPercent()
+        setupImage()
+        setupContainerView()
+    }
+
     private func setupTitle() {
+        containerView.addSubview(title)
         title.text = "High fructose corn syrup"
         title.textColor = .black
         
         title.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(title)
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            title.leftAnchor.constraint(equalTo: leftAnchor, constant: 20)
+            title.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 20),
+            title.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20)
         ])
     }
 
     private func setupPercent() {
+        containerView.addSubview(percent)
         percent.textColor = .gray
         
         percent.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(percent)
         NSLayoutConstraint.activate([
             percent.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 15),
-            percent.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
-            percent.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            percent.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
+            containerView.bottomAnchor.constraint(equalTo: percent.bottomAnchor, constant: 20)
         ])
     }
 
     private func setupImage() {
+        containerView.addSubview(image)
         image.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(image)
         NSLayoutConstraint.activate([
             image.heightAnchor.constraint(greaterThanOrEqualToConstant: 30),
             image.widthAnchor.constraint(greaterThanOrEqualToConstant: 30),
-            image.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
-            image.centerYAnchor.constraint(greaterThanOrEqualTo: centerYAnchor)
+            containerView.rightAnchor.constraint(equalTo: image.rightAnchor, constant: 20),
+            image.centerYAnchor.constraint(greaterThanOrEqualTo: containerView.centerYAnchor)
+        ])
+    }
+
+    private func setupContainerView() {
+        addSubview(containerView)
+        containerView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 24
+        containerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.leftAnchor.constraint(equalTo: leftAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            containerView.rightAnchor.constraint(equalTo: rightAnchor)
         ])
     }
 

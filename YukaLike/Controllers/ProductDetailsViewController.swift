@@ -48,7 +48,7 @@ class ProductDetailsViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16)
+            view.safeAreaLayoutGuide.rightAnchor.constraint(equalTo: tableView.rightAnchor, constant: 16)
         ])
     }
     
@@ -81,14 +81,18 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
         )
 
         if indexPath.section == 0 {
+            // first Cell in first section
             let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! ProductDescriptionTableViewCell
             cell.configure(with: ingredient)
 
             cell.layer.cornerRadius = 24
-            cell.clipsToBounds = true
+            cell.layer.shadowColor = UIColor.gray.cgColor
+            cell.layer.shadowOpacity = 0.5
+            cell.layer.shadowOffset = CGSize(width: 0, height: 5)
 
             return cell
         } else if indexPath.row == 0 {
+            // first Cell in second section
             let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
             cell.configure(with: ingredient)
 
@@ -98,15 +102,18 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
 
             return cell
         } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            // last Cell in second section
             let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
             cell.configure(with: ingredient)
 
-            cell.layer.cornerRadius = 24
-            cell.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-            cell.clipsToBounds = true
+            cell.layer.masksToBounds = false
+            cell.layer.shadowColor = UIColor.gray.cgColor
+            cell.layer.shadowOpacity = 0.5
+            cell.layer.shadowOffset = CGSize(width: 0, height: 5)
 
             return cell
         } else {
+            // other cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
             cell.configure(with: ingredient)
 
