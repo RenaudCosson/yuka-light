@@ -55,12 +55,17 @@ class RootViewController: UIViewController {
         stackView.addArrangedSubview(productIdLabel)
         stackView.addArrangedSubview(productIdTextField)
         stackView.addArrangedSubview(validateButton)
+    
         stackView.backgroundColor = .white
         stackView.layer.cornerRadius = 24
         stackView.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.spacing = 24
-        
+
+        stackView.layer.shadowColor = UIColor.gray.cgColor
+        stackView.layer.shadowOpacity = 0.5
+        stackView.layer.shadowOffset = CGSize(width: 0, height: 5)
+
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
