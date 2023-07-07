@@ -75,7 +75,7 @@ class IngredientTableViewCell: UITableViewCell {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            containerView.leftAnchor.constraint(equalTo:  self.contentView.leftAnchor),
+            containerView.leftAnchor.constraint(equalTo:  self.contentView.leftAnchor, constant: 0),
             containerView.bottomAnchor.constraint(equalTo:  self.contentView.bottomAnchor),
             containerView.rightAnchor.constraint(equalTo:  self.contentView.rightAnchor)
         ])

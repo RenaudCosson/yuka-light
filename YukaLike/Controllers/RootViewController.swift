@@ -25,7 +25,7 @@ class RootViewController: UIViewController {
 
         // a voir pour cacher la navigation barre
     }
-    
+
     // MARK: - Setup
     
     private func setupBackButton() {

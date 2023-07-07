@@ -4,11 +4,19 @@ class ProductDetailsViewController: UIViewController {
 
     private lazy var tableView = createTableView()
 
+    // MARK: - UIViewController
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.scrollEdgeAppearance = nil
+    }
+
+    // MARK: - Setup
 
     private func setup() {
         title = "Fiche Produit"
@@ -22,6 +30,7 @@ class ProductDetailsViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .orange
+        tableView.showsVerticalScrollIndicator = false
 
         registerCells()
 
@@ -31,6 +40,8 @@ class ProductDetailsViewController: UIViewController {
 
         addTableViewConstraints()
     }
+
+    // MARK: - Private
 
     private func registerCells() {
         // Programatic
@@ -44,9 +55,9 @@ class ProductDetailsViewController: UIViewController {
     private func addTableViewConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            view.rightAnchor.constraint(equalTo: tableView.rightAnchor, constant: 0)
+            view.rightAnchor.constraint(equalTo: tableView.rightAnchor, constant: 16)
         ])
     }
 
@@ -56,6 +67,8 @@ class ProductDetailsViewController: UIViewController {
     }
 
 }
+
+// MARK: - Extension
 
 extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelegate {
 
@@ -101,7 +114,7 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
         cell.configure(with: ingredient)
         cell.customShadow()
         cell.clipsToBounds = true
-        
+
         return cell
     }
 
@@ -128,6 +141,8 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
         return cell
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     ProductDetailsViewController()
