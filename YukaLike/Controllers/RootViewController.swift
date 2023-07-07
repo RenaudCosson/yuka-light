@@ -22,6 +22,8 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         setup()
         setupBackButton()
+
+        // a voir pour cacher la navigation barre
     }
     
     // MARK: - Setup
@@ -55,7 +57,7 @@ class RootViewController: UIViewController {
         stackView.addArrangedSubview(productIdLabel)
         stackView.addArrangedSubview(productIdTextField)
         stackView.addArrangedSubview(validateButton)
-    
+
         stackView.backgroundColor = .white
         stackView.layer.cornerRadius = 24
         stackView.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
@@ -69,7 +71,7 @@ class RootViewController: UIViewController {
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             stackView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor)
         ])
     }

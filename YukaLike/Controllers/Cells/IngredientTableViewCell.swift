@@ -70,17 +70,14 @@ class IngredientTableViewCell: UITableViewCell {
     }
 
     private func setupContainerView() {
-        addSubview(containerView)
-        containerView.layer.masksToBounds = true
-        containerView.layer.cornerRadius = 24
-        containerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        self.contentView.addSubview(containerView)
 
         containerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: topAnchor),
-            containerView.leftAnchor.constraint(equalTo: leftAnchor),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            containerView.rightAnchor.constraint(equalTo: rightAnchor)
+            containerView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            containerView.leftAnchor.constraint(equalTo:  self.contentView.leftAnchor),
+            containerView.bottomAnchor.constraint(equalTo:  self.contentView.bottomAnchor),
+            containerView.rightAnchor.constraint(equalTo:  self.contentView.rightAnchor)
         ])
     }
 

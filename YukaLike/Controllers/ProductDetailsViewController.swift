@@ -1,27 +1,19 @@
-//
-//  ProductDetailsViewController.swift
-//  YukaLike
-//
-//  Created by Renaud Cosson on 05/07/2023.
-//
-
 import UIKit
 
 class ProductDetailsViewController: UIViewController {
-    
+
     private lazy var tableView = createTableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
+    
 
     private func setup() {
         title = "Fiche Produit"
         view.backgroundColor = .orange
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?
-                                                                    .navigationBar
-                                                                    .standardAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         setupTableView()
     }
 
@@ -30,37 +22,43 @@ class ProductDetailsViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .orange
-        tableView.showsVerticalScrollIndicator = false
 
+        registerCells()
+
+        tableView.dataSource = self
+        tableView.delegate = self
+        view.addSubview(tableView)
+
+        addTableViewConstraints()
+    }
+
+    private func registerCells() {
         // Programatic
         tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: "ingredient")
 
         // XIB
         let nib = UINib(nibName: "ProductDescriptionTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "title")
+    }
 
-
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
-
+    private func addTableViewConstraints() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            view.safeAreaLayoutGuide.rightAnchor.constraint(equalTo: tableView.rightAnchor, constant: 16)
+            view.rightAnchor.constraint(equalTo: tableView.rightAnchor, constant: 0)
         ])
     }
-    
+
     private func createTableView() -> UITableView {
-        let tableView = UITableView()
-        tableView.backgroundColor = .blue
+        let tableView = UITableView(frame: .zero, style: .grouped)
         return tableView
     }
 
 }
 
 extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelegate {
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -70,76 +68,65 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let imageProduct = UIImage(resource: .coca)
-        let imageNutriscore = UIImage(resource: .nutriscore)
         let ingredient = Ingredient(
             title: "High fructose corn syrup",
             subtile: "Haagen-Dazs",
             percent: 23,
-            imageProduct: imageProduct,
-            imageNutriscore: imageNutriscore
+            imageProduct: UIImage(resource: .coca),
+            imageNutriscore: UIImage(resource: .nutriscore)
         )
 
-        if indexPath.section == 0 {
-            // first Cell in first section
-            let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! ProductDescriptionTableViewCell
-            cell.configure(with: ingredient)
-
-            cell.layer.cornerRadius = 24
-            cell.layer.shadowColor = UIColor.gray.cgColor
-            cell.layer.shadowOpacity = 0.5
-            cell.layer.shadowOffset = CGSize(width: 0, height: 5)
-            cell.isUserInteractionEnabled = false
-
-            return cell
-        } else if indexPath.row == 0 {
-            // first Cell in second section
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
-            cell.configure(with: ingredient)
-
-            cell.layer.cornerRadius = 24
-            cell.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-            cell.clipsToBounds = true
-            cell.isUserInteractionEnabled = false
-
-            return cell
-        } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-            // last Cell in second section
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
-            cell.configure(with: ingredient)
-
-            cell.layer.masksToBounds = false
-            cell.layer.shadowColor = UIColor.gray.cgColor
-            cell.layer.shadowOpacity = 0.5
-            cell.layer.shadowOffset = CGSize(width: 0, height: 5)
-            cell.isUserInteractionEnabled = false
-
-            return cell
-        } else {
-            // other cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
-            cell.configure(with: ingredient)
-            cell.isUserInteractionEnabled = false
-
-            return cell
+        switch (indexPath.section, indexPath.row) {
+        case (0, _):
+            return createProductDescriptionCell(using: tableView, ingredient: ingredient)
+        case (1, 0):
+            return createFirstIngredientCell(using: tableView, ingredient: ingredient)
+        case (1, tableView.numberOfRows(inSection: indexPath.section) - 1):
+            return createLastIngredientCell(using: tableView, ingredient: ingredient)
+        default:
+            return createIngredientCell(using: tableView, ingredient: ingredient)
         }
     }
-
-
-
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return section == 0 ? UIView() : nil
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 || section == 1 {
-            return 32
-        } else {
-            return 0
-        }
+        return (section == 0 || section == 1) ? 32 : 0
     }
 
+    private func createProductDescriptionCell(using tableView: UITableView, ingredient: Ingredient) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! ProductDescriptionTableViewCell
+        cell.configure(with: ingredient)
+        cell.customShadow()
+        cell.clipsToBounds = true
+        
+        return cell
+    }
+
+    private func createFirstIngredientCell(using tableView: UITableView, ingredient: Ingredient) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
+        cell.configure(with: ingredient)
+        cell.customCorner(with: .top)
+        cell.clipsToBounds = true
+        return cell
+    }
+
+    private func createLastIngredientCell(using tableView: UITableView, ingredient: Ingredient) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
+        cell.configure(with: ingredient)
+        cell.customCorner(with: .bottom)
+        cell.clipsToBounds = true
+        return cell
+    }
+
+
+    private func createIngredientCell(using tableView: UITableView, ingredient: Ingredient) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
+        cell.configure(with: ingredient)
+        return cell
+    }
 }
 
 #Preview {

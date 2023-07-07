@@ -24,6 +24,7 @@
 		E62A072D2A5598E000A97F32 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */; };
 		E62A07302A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A072F2A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift */; };
 		E62A07322A55CBAD00A97F32 /* ProductDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62A07312A55CBAD00A97F32 /* ProductDescriptionTableViewCell.xib */; };
+		E6FB76592A57FED7001B0FB2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FB76582A57FED7001B0FB2 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E62A072C2A5598E000A97F32 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		E62A072F2A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		E62A07312A55CBAD00A97F32 /* ProductDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		E6FB76582A57FED7001B0FB2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E62A071D2A541C1600A97F32 /* Result.swift */,
+				E6FB76582A57FED7001B0FB2 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				E62A07162A541B7600A97F32 /* HTTPRequestError.swift in Sources */,
 				E62A07182A541B9200A97F32 /* HTTPRequestErrorMapper.swift in Sources */,
 				E62A07142A541A7900A97F32 /* EndPoint.swift in Sources */,
+				E6FB76592A57FED7001B0FB2 /* UIView.swift in Sources */,
 				E62A07122A541A5500A97F32 /* HTTPClient.swift in Sources */,
 				377E00B42922315E00E76B79 /* SceneDelegate.swift in Sources */,
 				E62A07302A55CB7800A97F32 /* ProductDescriptionTableViewCell.swift in Sources */,
