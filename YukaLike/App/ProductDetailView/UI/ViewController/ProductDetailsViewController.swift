@@ -3,12 +3,30 @@ import UIKit
 class ProductDetailsViewController: UIViewController {
 
     private lazy var tableView = createTableView()
+    public var viewModel: ProductDetailViewModel!
+    public var presenter: ProductDetailPresenter?
+
+    init(viewModel: ProductDetailViewModel!) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        presenter?.start()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -21,7 +39,6 @@ class ProductDetailsViewController: UIViewController {
     private func setup() {
         title = "Fiche Produit"
         view.backgroundColor = .orange
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         setupTableView()
     }
 
@@ -30,7 +47,7 @@ class ProductDetailsViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .orange
-        tableView.showsVerticalScrollIndicator = false
+//        tableView.showsVerticalScrollIndicator = false
 
         registerCells()
 
@@ -73,31 +90,30 @@ class ProductDetailsViewController: UIViewController {
 extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel.sectionViewModels.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : 9
+        switch viewModel.sectionViewModels[section] {
+        case .description:
+            return 1
+        case .product(let cells):
+            return cells.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ingredient = Ingredient(
-            title: "High fructose corn syrup",
-            subtile: "Haagen-Dazs",
-            percent: 23,
-            imageProduct: UIImage(resource: .coca),
-            imageNutriscore: UIImage(resource: .nutriscore)
-        )
-
-        switch (indexPath.section, indexPath.row) {
-        case (0, _):
-            return createProductDescriptionCell(using: tableView, ingredient: ingredient)
-        case (1, 0):
-            return createFirstIngredientCell(using: tableView, ingredient: ingredient)
-        case (1, tableView.numberOfRows(inSection: indexPath.section) - 1):
-            return createLastIngredientCell(using: tableView, ingredient: ingredient)
-        default:
-            return createIngredientCell(using: tableView, ingredient: ingredient)
+        switch viewModel.sectionViewModels[indexPath.section] {
+        case .description(let viewModel):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! ProductDescriptionTableView
+            cell.configure(viewModel)
+            // TODO: je le laisse ici ou dans le viewmodel ?
+            cell.customShadow()
+            return cell
+        case .product(let cells):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
+            cell.configure(cells[indexPath.row])
+            return cell
         }
     }
 
@@ -108,42 +124,11 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return (section == 0 || section == 1) ? 32 : 0
     }
-
-    private func createProductDescriptionCell(using tableView: UITableView, ingredient: Ingredient) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! ProductDescriptionTableViewCell
-        cell.configure(with: ingredient)
-        cell.customShadow()
-        cell.clipsToBounds = true
-
-        return cell
-    }
-
-    private func createFirstIngredientCell(using tableView: UITableView, ingredient: Ingredient) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
-        cell.configure(with: ingredient)
-        cell.customCorner(with: .top)
-        cell.clipsToBounds = true
-        return cell
-    }
-
-    private func createLastIngredientCell(using tableView: UITableView, ingredient: Ingredient) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
-        cell.configure(with: ingredient)
-        cell.customCorner(with: .bottom)
-        cell.clipsToBounds = true
-        return cell
-    }
-
-
-    private func createIngredientCell(using tableView: UITableView, ingredient: Ingredient) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
-        cell.configure(with: ingredient)
-        return cell
-    }
 }
 
-// MARK: - Preview
-
-#Preview {
-    ProductDetailsViewController()
+extension ProductDetailsViewController: ProductDetailViewContract {
+    func display(_ viewModel: ProductDetailViewModel) {
+        self.viewModel.sectionViewModels = viewModel.sectionViewModels
+        tableView.reloadData()
+    }
 }

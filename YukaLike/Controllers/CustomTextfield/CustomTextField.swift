@@ -10,11 +10,15 @@ import UIKit
 
 class CutomeTextField: UIView {
     let textField = UITextField()
-    
+
+    // MARK: - UIView
+
     override func layoutSubviews() {
         layer.cornerRadius = frame.height / 2
     }
-    
+
+    // MARK: - Init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -24,6 +28,8 @@ class CutomeTextField: UIView {
         super.init(coder: coder)
         setup()
     }
+
+    // MARK: - Setup
 
     private func setup() {
         addSubview(textField)

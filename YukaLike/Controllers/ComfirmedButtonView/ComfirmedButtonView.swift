@@ -12,7 +12,9 @@ class ComfirmedButtonView: UIButton {
         super.layoutSubviews()
         layer.cornerRadius = frame.height / 2
     }
-    
+
+    // MARK: - Init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -22,9 +24,11 @@ class ComfirmedButtonView: UIButton {
         super.init(coder: coder)
         setup()
     }
-    
+
+    // MARK: - Setup
+
     private func setup() {
-        backgroundColor = UIColor(resource: .customGreen)
+        backgroundColor = UIColor(named: "customGreen")
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(greaterThanOrEqualToConstant: 44)
             .isActive = true

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import ADUtils
 
 class RootViewController: UIViewController {
     
@@ -15,6 +14,8 @@ class RootViewController: UIViewController {
     private lazy var productIdTextField = createProductIdTextField()
     private lazy var validateButton = createValidateButton()
     private lazy var stackView = createStackView()
+
+    public var presenter: RootViewPresenter?
     
     // MARK: - UIViewController
     
@@ -22,8 +23,8 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         setup()
         setupBackButton()
-
-        // a voir pour cacher la navigation barre
+        presenter = RootViewPresenter(viewContract: self)
+        presenter?.start()
     }
 
     // MARK: - Setup
@@ -39,7 +40,7 @@ class RootViewController: UIViewController {
         // Do the setup here.
         setupStackView()
         setupLabel()
-        view.backgroundColor = UIColor(resource: .customGradiant)
+        view.backgroundColor = .orange
     }
     
     private func setupLabel() {
@@ -81,7 +82,7 @@ class RootViewController: UIViewController {
     private func createTitleLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "EYuka"
+        label.text = ""
         label.textColor = .white
         label.font = .systemFont(ofSize: 32, weight: .bold)
         return label
@@ -90,22 +91,23 @@ class RootViewController: UIViewController {
     private func createProductIdLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Entrer l'identifiant produit"
+        label.text = ""
         label.textColor = .gray
         return label
     }
     
     private func createProductIdTextField() -> UIView {
         let textView = CutomeTextField()
-        textView.textField.placeholder = "identifiant produit"
+        textView.textField.placeholder = ""
         textView.textField.clearButtonMode = .whileEditing
         return textView
     }
     
     private func createValidateButton() -> UIButton {
         let button = ComfirmedButtonView()
-        button.setTitle("Confirmer", for: .normal)
+        button.setTitle("", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
+        button.backgroundColor = UIColor(named: "CustomGreen")
         button.layer.shadowColor  = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.5
         button.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -135,11 +137,19 @@ class RootViewController: UIViewController {
     // MARK: Navigation
 
     private func navigateToProductDetails() {
-        self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
+        guard let productID = self.productIdLabel.text else { return }
+        let viewModel = ProductDetailViewModel(sectionViewModels: [], productID: productID)
+        let viewController = ProductDetailsViewController(viewModel: viewModel)
+        let presenter = ProductDetailPresenterImplementation(viewContract: viewController)
+        viewController.presenter = presenter
+        self.navigationController?.pushViewController(viewController, animated: true)
       }
 }
 
-
-#Preview {
-    RootViewController()
+extension RootViewController: RootViewContract {
+    func display(_ viewModel: RootViewModel) {
+        self.productIdLabel.text = viewModel.productIdLabel
+        self.titleLabel.text = viewModel.titleLabel
+        self.validateButton.setTitle(viewModel.validateButtonTitle, for: .normal)
+    }
 }

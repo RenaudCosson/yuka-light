@@ -9,10 +9,12 @@ import UIKit
 
 class IngredientTableViewCell: UITableViewCell {
     
-    var title = UILabel()
-    var percent = UILabel()
-    let image = UIImageView()
-    let containerView = UIView()
+    private lazy var title = UILabel()
+    private lazy var percent = UILabel()
+    private lazy var image = UIImageView()
+    private lazy var containerView = UIView()
+
+    // MARK: - Init
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,11 +23,18 @@ class IngredientTableViewCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setup()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    // MARK: - Public
+
+    func configure(_ viewModel: IngredientTableViewCellModel) {
+        self.title.text = viewModel.title
+        self.percent.text = "\(viewModel.percent)%"
+        self.image.image = UIImage(data: viewModel.image)
     }
+
+    // MARK: - Private
 
     private func setup() {
         setupTitle()
@@ -36,7 +45,7 @@ class IngredientTableViewCell: UITableViewCell {
 
     private func setupTitle() {
         containerView.addSubview(title)
-        title.text = "High fructose corn syrup"
+        title.text = ""
         title.textColor = .black
         
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -80,19 +89,4 @@ class IngredientTableViewCell: UITableViewCell {
             containerView.rightAnchor.constraint(equalTo:  self.contentView.rightAnchor)
         ])
     }
-
-    func configure(with ingredient: Ingredient) {
-        self.title.text = ingredient.title
-        self.percent.text = "\(ingredient.percent)%"
-        self.image.image = UIImage(resource: .logo)
-    }
-}
-
-
-struct Ingredient {
-    let title: String
-    let subtile: String
-    let percent: Int
-    let imageProduct: UIImage
-    let imageNutriscore: UIImage
 }
