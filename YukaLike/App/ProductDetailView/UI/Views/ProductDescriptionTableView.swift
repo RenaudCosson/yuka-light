@@ -27,7 +27,7 @@ class ProductDescriptionTableView: UITableViewCell {
     func configure(_ viewModel: ProductDescriptionTableViewModel) {
         self.productNameUILabel.text = viewModel.productNameUILabel
         self.productUIimageView.kf.setImage(with: viewModel.imageProduct)
-        self.scoreUIimageView.kf.setImage(with: viewModel.imageNutriscore)
+//        self.scoreUIimageView.image = viewModel.imageNutriscore
     }
 
     // MARK: - Private

@@ -5,31 +5,81 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E83B8B8-10EF-46B9-92B4-7D790138F4C9"
+            uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            breakpointStackSelectionBehavior = "1"
-            scope = "1"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D11C30C-0B4C-4203-9168-2312C37B809D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YukaLike/Controllers/Cells/ProductDescriptionTableViewCell.swift"
+            filePath = "YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "configure(with:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "start()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11 - ae5794a2e5237d42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YukaLike.ProductDetailPresenterImplementation.start(eanCode: Swift.String) -&gt; ()"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11 - 6406094a140e11de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;YukaLike.Product, Swift.Error&gt;) -&gt; () in YukaLike.ProductDetailPresenterImplementation.start(eanCode: Swift.String) -&gt; ()"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11 - 8e61bf0f27c62afd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YukaLike.ProductDetailPresenterImplementation.start() -&gt; ()"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11 - cd5c5851f6154f65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;YukaLike.Product, Swift.Error&gt;) -&gt; () in YukaLike.ProductDetailPresenterImplementation.start() -&gt; ()"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

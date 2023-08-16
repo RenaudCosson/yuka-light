@@ -11,8 +11,7 @@ public class ProductDescriptionTableMapper {
     func map(ingredient: Ingredient) -> ProductDescriptionTableViewModel {
         return ProductDescriptionTableViewModel(
             productNameUILabel: ingredient.title,
-            imageProduct: ingredient.imageProduct,
-            imageNutriscore: ingredient.imageNutriscore
+            imageProduct: ingredient.imageProduct
         )
     }
 }

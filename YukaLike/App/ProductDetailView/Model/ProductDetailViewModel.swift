@@ -14,5 +14,5 @@ public enum ProductDetailViewModelSectionType {
 
 public struct ProductDetailViewModel {
     public var sectionViewModels: [ProductDetailViewModelSectionType]
-    public let productID: String
+    static let empty = ProductDetailViewModel(sectionViewModels: [])
 }

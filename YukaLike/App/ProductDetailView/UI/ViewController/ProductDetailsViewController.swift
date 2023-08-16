@@ -3,18 +3,8 @@ import UIKit
 class ProductDetailsViewController: UIViewController {
 
     private lazy var tableView = createTableView()
-    public var viewModel: ProductDetailViewModel!
+    private var viewModel: ProductDetailViewModel = .empty
     public var presenter: ProductDetailPresenter?
-
-    init(viewModel: ProductDetailViewModel!) {
-        super.init(nibName: nil, bundle: nil)
-        self.viewModel = viewModel
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        fatalError("init(coder:) has not been implemented")
-    }
 
     // MARK: - UIViewController
 
@@ -40,6 +30,16 @@ class ProductDetailsViewController: UIViewController {
         title = "Fiche Produit"
         view.backgroundColor = .orange
         setupTableView()
+        let button = UIButton()
+        button.setTitle("test", for: .normal)
+
+        view.addSubview(button)
+
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 
     private func setupTableView() {
@@ -47,7 +47,6 @@ class ProductDetailsViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .orange
-//        tableView.showsVerticalScrollIndicator = false
 
         registerCells()
 

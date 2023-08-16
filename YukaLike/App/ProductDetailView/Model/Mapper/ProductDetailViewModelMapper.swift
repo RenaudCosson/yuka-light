@@ -11,14 +11,14 @@ class ProductDetailViewModelMapper {
     public func map(product: Product, ingredients: [Ingredient]) -> ProductDetailViewModel {
         let descriptionSection = mapDescriptionSection(product: product)
         let ingredientsSection = mapIngredientsSection(ingredients: ingredients)
-        return ProductDetailViewModel(sectionViewModels: [descriptionSection, ingredientsSection], productID: product.id)
+        return ProductDetailViewModel(sectionViewModels: [descriptionSection, ingredientsSection])
     }
 
     private func mapDescriptionSection(product: Product) -> ProductDetailViewModelSectionType {
         let viewModel = ProductDescriptionTableViewModel(
             productNameUILabel: product.title,
-            imageProduct: product.image,
-            imageNutriscore: product.nutriScore
+            imageProduct: product.image
+//            imageNutriscore: product.getNutriscoreImage()
         )
         return .description(viewModel)
     }
