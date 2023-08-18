@@ -7,18 +7,18 @@
 
 import Foundation
 import UIKit
+import ADCoordinator
 
 
 class BaseURLProviderImplementation: BaseURLProvider {
-    var baseURL: String = "https://world.openfoodfacts.org/api/v3/product/"
+    var baseURL: String = "https://world.openfoodfacts.org/cgi/search.pl?search_terms="
 }
 
-class SearchCoordinator {
+class SearchCoordinator: Coordinator {
 
     // MARK: - Private
 
-    private let navigationController: UINavigationController
-    private var productCoordinator: ProductDetailCoordinator?
+    private unowned var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -27,10 +27,13 @@ class SearchCoordinator {
     // MARK: - Coordinator
 
     func start() {
-        let searchViewController = SearchViewController()
-        let presenter = DependencyProvider.shared.searchPresenter(viewContract: searchViewController, presenterDelegate: self)
-        searchViewController.presenter = presenter
-        navigationController.pushViewController(searchViewController, animated: false)
+        let viewController = SearchViewController()
+        viewController.presenter = DependencyProvider.shared.searchPresenter(
+            viewContract: viewController,
+            presenterDelegate: self
+        )
+        navigationController.pushViewController(viewController, animated: true)
+        bindToLifecycle(of: viewController)
     }
 }
 
@@ -42,7 +45,7 @@ extension SearchCoordinator: SearchPresenterDelegate {
 
     func searchPresenterDidRequestProduct(_ presenter: SearchPresenter, eanCode: String) {
         let coordinator = ProductDetailCoordinator(navigationController: navigationController)
-        self.productCoordinator = coordinator
-        productCoordinator?.start(animated: true, eanCode: eanCode)
+        addChild(coordinator)
+        coordinator.start(animated: true, eanCode: eanCode)
     }
 }

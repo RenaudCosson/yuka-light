@@ -24,5 +24,5 @@ struct RESTProduct: Decodable {
 }
 
 struct RESTResponse: Decodable {
-    let product: RESTProduct
+    let products: [RESTProduct]
 }

@@ -8,15 +8,15 @@
 import Foundation
 import Alamofire
 import UIKit
+import ADCoordinator
 
 // TODO: Ne plus tenir le productCoordinator -> Use ADCoordinator (methode add_child) #AlexHelp :D
 
-class ProductDetailCoordinator {
+class ProductDetailCoordinator: Coordinator {
 
     // MARK: - Private
 
-    private var productCoordinator: ProductDetailCoordinator?
-    private let navigationController: UINavigationController
+    private unowned var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -26,9 +26,13 @@ class ProductDetailCoordinator {
 
     func start(animated: Bool, eanCode: String) {
         let viewController = ProductDetailsViewController()
-        let presenter = DependencyProvider.shared.productDetailPresenter(viewContract: viewController, presenterDelegate: self, eanCode: eanCode)
-        viewController.presenter = presenter
+        viewController.presenter = DependencyProvider.shared.productDetailPresenter(
+            viewContract: viewController, 
+            presenterDelegate: self,
+            eanCode: eanCode
+        )
         navigationController.pushViewController(viewController, animated: animated)
+        bindToLifecycle(of: viewController)
     }
 }
 
@@ -36,8 +40,8 @@ extension ProductDetailCoordinator: ProductDetailPresenterDelegate {
     func productDetailPresenter(_ presenter: ProductDetailPresenter, didSelectEanCode eanCode: String) {
         let newNavigationController = UINavigationController()
         let coordinator = ProductDetailCoordinator(navigationController: newNavigationController)
-        self.productCoordinator = coordinator
-        productCoordinator?.start(animated: false, eanCode: eanCode)
+        addChild(coordinator)
+        coordinator.start(animated: false, eanCode: eanCode)
         navigationController.present(newNavigationController, animated: true)
     }
 }

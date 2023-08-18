@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol GetProductInteractor {
-    func execute(eanCode: String, completion: ((Result<Product, Error>) -> Void)?)
+    func execute(product: String, completion: ((Result<Product, Error>) -> Void)?)
 }

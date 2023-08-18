@@ -46,6 +46,8 @@ class CustomeTextField: UIView, UITextFieldDelegate {
         textField.delegate = self // Set delegate to self
         textField.placeholder = ""
         textField.clearButtonMode = .whileEditing
+        // TODO: A delete
+        textField.text = "40052465"
 
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -58,24 +60,12 @@ class CustomeTextField: UIView, UITextFieldDelegate {
 
     // MARK: - UITextFieldDelegate
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        delegate?.customTextFieldDidEndEditing(self, text: text)
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return false
-    }
-
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return false
-    }
-
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         print(updatedText)
+        delegate?.customTextFieldDidEndEditing(self, text: updatedText)
         return true
     }
 }

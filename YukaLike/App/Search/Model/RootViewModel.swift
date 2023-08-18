@@ -13,6 +13,6 @@ public struct SearchViewModel {
     public let validateButtonTitle: String
 
     public static let stubs: SearchViewModel = {
-        return SearchViewModel(titleLabel: "Yukalight", productIdLabel: "Product EAN", validateButtonTitle: "Valider")
+        return SearchViewModel(titleLabel: "Yukalight", productIdLabel: "Produit", validateButtonTitle: "Valider")
     }()
 }

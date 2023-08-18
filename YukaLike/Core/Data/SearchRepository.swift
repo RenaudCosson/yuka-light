@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol SearchRepository {
-    func getProduct(eanCode: String, completion: ((Result<Product, Error>) -> Void)?)
+    func getProduct(product: String, completion: ((Result<Product, Error>) -> Void)?)
 }

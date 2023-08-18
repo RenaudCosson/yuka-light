@@ -4,7 +4,7 @@ class ProductDetailsViewController: UIViewController {
 
     private lazy var tableView = createTableView()
     private var viewModel: ProductDetailViewModel = .empty
-    public var presenter: ProductDetailPresenter?
+    var presenter: ProductDetailPresenter?
 
     // MARK: - UIViewController
 

@@ -15,8 +15,8 @@ public class GetProductInteractorImplementation: GetProductInteractor {
         self.searchRepository = searchRepository
     }
 
-    public func execute(eanCode: String, completion: ((Result<Product, Error>) -> Void)?) {
+    public func execute(product: String, completion: ((Result<Product, Error>) -> Void)?) {
         // TODO: A implementer
-        searchRepository.getProduct(eanCode: eanCode, completion: completion)
+        searchRepository.getProduct(product: product, completion: completion)
     }
 }

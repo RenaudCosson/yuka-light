@@ -18,12 +18,12 @@ class PresenterAssembly: Assembly {
             )
         }
 
-        container.register(ProductDetailPresenter.self) { r, viewContract, delegate, eanCode in
+        container.register(ProductDetailPresenter.self) { r, viewContract, delegate, product in
             ProductDetailPresenterImplementation(
                 viewContract: viewContract,
                 delegate: delegate,
                 getProductInteractor: r.resolve(GetProductInteractor.self)!,
-                eanCode: eanCode
+                product: product
             )
         }
     }

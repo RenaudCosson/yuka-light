@@ -9,31 +9,31 @@ import Foundation
 
 public class ProductDetailPresenterImplementation: ProductDetailPresenter {
 
-    private let viewContract: ProductDetailViewContract?
+    private weak var viewContract: ProductDetailViewContract?
     private weak var delegate: ProductDetailPresenterDelegate?
     private let getProductInteractor: GetProductInteractor
-    private let eanCode: String?
+    private let product: String?
 
     public init(
         viewContract: ProductDetailViewContract,
         delegate: ProductDetailPresenterDelegate,
         getProductInteractor: GetProductInteractor,
-        eanCode: String
+        product: String
     ) {
         self.viewContract = viewContract
         self.delegate = delegate
         self.getProductInteractor = getProductInteractor
-        self.eanCode = eanCode
+        self.product = product
     }
 
     // MARK: - Public
     public func start() {
-        guard let eanCode = eanCode else { return }
-        getProductInteractor.execute(eanCode: eanCode) { result in
+        guard let product = product else { return }
+        getProductInteractor.execute(product: product) { [weak self] result in
             switch result {
             case .success(let product):
                 let viewModel = ProductDetailViewModelMapper().map(product: product, ingredients: [])
-                self.viewContract?.display(viewModel)
+                self?.viewContract?.display(viewModel)
             case .failure(let failure):
                 print(failure.localizedDescription)
             }

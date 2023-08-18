@@ -8,6 +8,10 @@
 import Foundation
 import Alamofire
 
+enum Constant {
+    static let parameters = "&search_simple=1&action=process&json=1"
+}
+
 public class SearchNetworkRepository: SearchRepository {
 
     private let baseURLProvider: BaseURLProvider
@@ -18,10 +22,10 @@ public class SearchNetworkRepository: SearchRepository {
         self.session = session
     }
 
-    public func getProduct(eanCode: String, completion: ((Result<Product, Error>) -> Void)?) {
+    public func getProduct(product: String, completion: ((Result<Product, Error>) -> Void)?) {
         let decoder = JSONDecoder()
         session.request(
-            baseURLProvider.baseURL + eanCode,
+            baseURLProvider.baseURL + product.replacingOccurrences(of: " " , with: "%20") + Constant.parameters,
             method: .get
         )
         .validate()
@@ -34,7 +38,8 @@ public class SearchNetworkRepository: SearchRepository {
                     completion?(.failure(error))
                 }
             case let .success(restProduct):
-                let product = SearchMapper(restProduct: restProduct.product).map()
+                guard let restProduct = restProduct.products.first else { return }
+                let product = SearchMapper(restProduct: restProduct).map()
                 completion?(.success(product))
             }
         }

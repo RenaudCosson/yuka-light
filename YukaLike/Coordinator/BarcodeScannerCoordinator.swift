@@ -8,8 +8,9 @@
 import Foundation
 import Alamofire
 import UIKit
+import ADCoordinator
 
-class BarcodeSannerCoordinator {
+class BarcodeSannerCoordinator: Coordinator {
     // MARK: - Private
     private var productCoordinator: ProductDetailCoordinator?
     private let navigationController: UINavigationController

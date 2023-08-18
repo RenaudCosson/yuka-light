@@ -59,6 +59,7 @@
 		E6B38FB72A81460F00C66499 /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B38FB62A81460F00C66499 /* ProductDetailPresenter.swift */; };
 		E6B38FB92A8146B500C66499 /* ProductDetailPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B38FB82A8146B500C66499 /* ProductDetailPresenterImplementation.swift */; };
 		E6B38FBC2A814A5C00C66499 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B38FBB2A814A5C00C66499 /* Product.swift */; };
+		E6BA53352A8F6FF8001E43D5 /* ADCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = E6BA53342A8F6FF8001E43D5 /* ADCoordinator */; };
 		E6FB76592A57FED7001B0FB2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FB76582A57FED7001B0FB2 /* UIView.swift */; };
 		E6FB765D2A581AC9001B0FB2 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FB765C2A581AC9001B0FB2 /* Ingredient.swift */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 			files = (
 				E688AB5B2A8526D800E34988 /* Alamofire in Frameworks */,
 				E688AB472A84CE0F00E34988 /* Kingfisher in Frameworks */,
+				E6BA53352A8F6FF8001E43D5 /* ADCoordinator in Frameworks */,
 				E688AB602A853C4F00E34988 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +456,7 @@
 				E688AB462A84CE0F00E34988 /* Kingfisher */,
 				E688AB5A2A8526D800E34988 /* Alamofire */,
 				E688AB5F2A853C4F00E34988 /* Swinject */,
+				E6BA53342A8F6FF8001E43D5 /* ADCoordinator */,
 			);
 			productName = YukaLike;
 			productReference = 377E00AE2922315E00E76B79 /* YukaLike.app */;
@@ -487,6 +490,7 @@
 				E688AB452A84CE0F00E34988 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E688AB592A8526D800E34988 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E688AB5E2A853C4F00E34988 /* XCRemoteSwiftPackageReference "Swinject" */,
+				E6BA53332A8F6FF8001E43D5 /* XCRemoteSwiftPackageReference "Coordinator" */,
 			);
 			productRefGroup = 377E00AF2922315E00E76B79 /* Products */;
 			projectDirPath = "";
@@ -830,6 +834,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		E6BA53332A8F6FF8001E43D5 /* XCRemoteSwiftPackageReference "Coordinator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/faberNovel/Coordinator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -847,6 +859,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E688AB5E2A853C4F00E34988 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		E6BA53342A8F6FF8001E43D5 /* ADCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6BA53332A8F6FF8001E43D5 /* XCRemoteSwiftPackageReference "Coordinator" */;
+			productName = ADCoordinator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

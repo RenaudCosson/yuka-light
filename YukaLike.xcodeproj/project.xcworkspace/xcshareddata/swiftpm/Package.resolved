@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "coordinator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/faberNovel/Coordinator",
+      "state" : {
+        "revision" : "9e545e3f4d866db7b51863a1fc0ba0fee45a265d",
+        "version" : "1.0.2"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
