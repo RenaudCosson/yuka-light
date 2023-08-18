@@ -14,7 +14,12 @@ public class ProductDetailPresenterImplementation: ProductDetailPresenter {
     private let getProductInteractor: GetProductInteractor
     private let eanCode: String?
 
-    public init(viewContract: ProductDetailViewContract, delegate: ProductDetailPresenterDelegate, getProductInteractor: GetProductInteractor, eanCode: String) {
+    public init(
+        viewContract: ProductDetailViewContract,
+        delegate: ProductDetailPresenterDelegate,
+        getProductInteractor: GetProductInteractor,
+        eanCode: String
+    ) {
         self.viewContract = viewContract
         self.delegate = delegate
         self.getProductInteractor = getProductInteractor

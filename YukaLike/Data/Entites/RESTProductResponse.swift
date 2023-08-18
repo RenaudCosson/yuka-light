@@ -9,10 +9,10 @@ import Foundation
 
 struct RESTProduct: Decodable {
 
-    let id: String?
-    let brands: String?
-    let imageFrontSmallUrl: URL?
-    let nutriscoreGrade: [String]?
+    let id: String
+    let brands: String
+    let imageFrontSmallUrl: String?
+    let nutriscoreGrade: String?
 
 
     enum CodingKeys: String, CodingKey {

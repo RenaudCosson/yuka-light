@@ -20,7 +20,6 @@ public class SearchNetworkRepository: SearchRepository {
 
     public func getProduct(eanCode: String, completion: ((Result<Product, Error>) -> Void)?) {
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         session.request(
             baseURLProvider.baseURL + eanCode,
             method: .get

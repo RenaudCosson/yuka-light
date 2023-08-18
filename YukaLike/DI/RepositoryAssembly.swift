@@ -6,16 +6,16 @@
 //
 
 import Foundation
-
 import Swinject
 import Alamofire
 
 class RepositoryAssembly: Assembly {
     func assemble(container: Container) {
+
         container.register(SearchRepository.self) { r in
-            return SearchNetworkRepository(
+            SearchNetworkRepository(
                 baseURLProvider: r.resolve(BaseURLProvider.self)!,
                 session: r.resolve(Session.self)!)
-        }
+        }.inObjectScope(.container)
     }
 }

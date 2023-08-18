@@ -14,70 +14,225 @@
             filePath = "YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "6B5B20B8-E8B5-4B27-8D51-97751F86811A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47E221FE-27D9-44D8-AEAC-81F5B38CC522"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YukaLike/App/Search/Model/Presenter/SearchPresenterImplementation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "didSelectValidate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5553A386-6C9D-41C1-9154-9E26934E8214"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "textFieldDidEndEditing(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11 - ae5794a2e5237d42"
+                  uuid = "5553A386-6C9D-41C1-9154-9E26934E8214 - ebb6b60172a7679e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "YukaLike.ProductDetailPresenterImplementation.start(eanCode: Swift.String) -&gt; ()"
+                  symbolName = "YukaLike.CustomeTextField.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
                   moduleName = "YukaLike"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "64">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "120">
                </Location>
                <Location
-                  uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11 - 6406094a140e11de"
+                  uuid = "5553A386-6C9D-41C1-9154-9E26934E8214 - ebb6b60172a7679e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;YukaLike.Product, Swift.Error&gt;) -&gt; () in YukaLike.ProductDetailPresenterImplementation.start(eanCode: Swift.String) -&gt; ()"
+                  symbolName = "YukaLike.CustomeTextField.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
                   moduleName = "YukaLike"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "188">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "176">
                </Location>
                <Location
-                  uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11 - 8e61bf0f27c62afd"
+                  uuid = "5553A386-6C9D-41C1-9154-9E26934E8214 - 83fa1de5ed2c5322"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "YukaLike.ProductDetailPresenterImplementation.start() -&gt; ()"
+                  symbolName = "YukaLike.CustomeTextField.textFieldDidEndEditing(__C.UITextField) -&gt; ()"
                   moduleName = "YukaLike"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "5553A386-6C9D-41C1-9154-9E26934E8214 - 83fa1de5ed2c5322"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YukaLike.CustomeTextField.textFieldDidEndEditing(__C.UITextField) -&gt; ()"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "602E4664-C5CD-45BB-AFB7-2F3F64F71992"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "602E4664-C5CD-45BB-AFB7-2F3F64F71992 - ebb6b60172a764f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YukaLike.CustomeTextField.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
                   offsetFromSymbolStart = "140">
                </Location>
                <Location
-                  uuid = "7DFF622A-7816-4D0B-A130-268BFCEE0F11 - cd5c5851f6154f65"
+                  uuid = "602E4664-C5CD-45BB-AFB7-2F3F64F71992 - ebb6b60172a764f3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;YukaLike.Product, Swift.Error&gt;) -&gt; () in YukaLike.ProductDetailPresenterImplementation.start() -&gt; ()"
+                  symbolName = "YukaLike.CustomeTextField.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
                   moduleName = "YukaLike"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetailView/Presenters/ProductDetailPresenterImplementation.swift"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "188">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "602E4664-C5CD-45BB-AFB7-2F3F64F71992 - 696c844b1ba8ae4f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YukaLike.CustomeTextField.textFieldShouldReturn(__C.UITextField) -&gt; Swift.Bool"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EB8CF07-6EBB-4AD5-AD70-67847A059421"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "textFieldShouldEndEditing(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1EB8CF07-6EBB-4AD5-AD70-67847A059421 - ebb6b60172a76577"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YukaLike.CustomeTextField.textField(_: __C.UITextField, shouldChangeCharactersIn: __C._NSRange, replacementString: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "764">
+               </Location>
+               <Location
+                  uuid = "1EB8CF07-6EBB-4AD5-AD70-67847A059421 - 72b8c68f3d60636a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YukaLike.CustomeTextField.textFieldShouldEndEditing(__C.UITextField) -&gt; Swift.Bool"
+                  moduleName = "YukaLike"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/renaud.cosson/Desktop/onBoarding/yuka-light/YukaLike/App/ProductDetail/UI/Views/CustomTextField.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>

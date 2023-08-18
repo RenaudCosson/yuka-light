@@ -8,12 +8,18 @@
 import Foundation
 import UIKit
 
-class CustomeTextField: UITextField, UITextFieldDelegate {
-    let textField = UITextField()
+protocol CustomTextFieldDelegate: AnyObject {
+    func customTextFieldDidEndEditing(_ view: CustomeTextField, text: String)
+}
+
+class CustomeTextField: UIView, UITextFieldDelegate {
+   private let textField = UITextField()
+    var delegate: CustomTextFieldDelegate?
 
     // MARK: - UIView
 
     override func layoutSubviews() {
+        super.layoutSubviews()
         layer.cornerRadius = frame.height / 2
     }
 
@@ -38,6 +44,8 @@ class CustomeTextField: UITextField, UITextFieldDelegate {
         layer.borderColor = UIColor.gray.cgColor
         clipsToBounds = true
         textField.delegate = self // Set delegate to self
+        textField.placeholder = ""
+        textField.clearButtonMode = .whileEditing
 
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -50,11 +58,23 @@ class CustomeTextField: UITextField, UITextFieldDelegate {
 
     // MARK: - UITextFieldDelegate
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        delegate?.customTextFieldDidEndEditing(self, text: text)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return false
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return false
+    }
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        // You can now use updatedText for whatever you want
         print(updatedText)
         return true
     }

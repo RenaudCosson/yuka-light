@@ -8,23 +8,43 @@
 import Foundation
 import Swinject
 
-class DependencyProvider {
+
+class DependencyProvider: NSObject {
     static let shared = DependencyProvider()
+    private let container = Container()
+    private let resolver: Swinject.Resolver
 
-    fileprivate let presenterAssembler: Assembler
-
-    private init() {
-        self.presenterAssembler = Assembler([
-            RepositoryAssembly()
-        ])
+    private override init() {
+        let assemblies: [Assembly] = [
+            RepositoryAssembly(),
+            PresenterAssembly(),
+            HelperAssembly(),
+            InteractorAssembly()
+        ]
+        resolver = container.synchronize()
+        super.init()
+        assemblies.forEach({$0.assemble(container: container)})
+        assemblies.forEach({$0.loaded(resolver: resolver)})
     }
 
     // MARK: - Presenters
 
     func searchPresenter(viewContract: SearchViewContract,
-                        presenterDelegate: SearchPresenter) -> SearchPresenter? {
-        return presenterAssembler
-            .resolver
-            .resolve(SearchPresenter.self, arguments: viewContract, presenterDelegate)
+                        presenterDelegate: SearchPresenterDelegate) -> SearchPresenter {
+        return resolver
+            .resolve(
+                SearchPresenter.self,
+                arguments: viewContract, presenterDelegate
+            )!
+    }
+
+    func productDetailPresenter(viewContract: ProductDetailViewContract,
+                                presenterDelegate: ProductDetailPresenterDelegate,
+                                eanCode: String) -> ProductDetailPresenter {
+        return resolver
+            .resolve(
+                ProductDetailPresenter.self,
+                     arguments: viewContract, presenterDelegate, eanCode
+            )!
     }
 }

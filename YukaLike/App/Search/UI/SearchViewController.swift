@@ -15,10 +15,10 @@ class SearchViewController: UIViewController {
     private lazy var validateButton = createValidateButton()
     private lazy var stackView = createStackView()
 
-    public var presenter: SearchPresenter?
+    public var presenter: SearchPresenter? 
     
     // MARK: - UIViewController
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -97,8 +97,7 @@ class SearchViewController: UIViewController {
     
     private func createProductIdTextField() -> CustomeTextField {
         let textView = CustomeTextField()
-        textView.textField.placeholder = ""
-        textView.textField.clearButtonMode = .whileEditing
+        textView.delegate = self
         return textView
     }
     
@@ -123,9 +122,11 @@ class SearchViewController: UIViewController {
     }
     
     @objc private func action() {
-        guard let eanCode = productIdTextField.textField.text, eanCode != "" else { return }
-        presenter?.didSelectValidate(eanCode: eanCode)
+        presenter?.didSelectValidate()
+//        presenter?.searchPresenterDidScanProduct(self)
     }
+
+    
     
     private func comfirmedButton() -> UIView {
         let view = UIView()
@@ -140,5 +141,12 @@ extension SearchViewController: SearchViewContract {
         self.productIdLabel.text = viewModel.productIdLabel
         self.titleLabel.text = viewModel.titleLabel
         self.validateButton.setTitle(viewModel.validateButtonTitle, for: .normal)
+    }
+
+}
+
+extension SearchViewController: CustomTextFieldDelegate {
+    func customTextFieldDidEndEditing(_ view: CustomeTextField, text: String) {
+        presenter?.didEndingEditing(text: text)
     }
 }

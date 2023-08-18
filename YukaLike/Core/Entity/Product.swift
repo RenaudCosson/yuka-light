@@ -10,11 +10,11 @@ import UIKit
 
 public struct Product {
     public let title: String
-//    public let nutriScore: [String]
+    public let nutriScore: String?
     public let image: URL?
     public let ingredients: [Ingredient]?
 
-//    func getNutriscoreImage() -> UIImage? {
-//        return UIImage(named: String(describing: nutriScore.first))
-//    }
+    func getNutriscoreImage() -> UIImage? {
+        return UIImage(named: String(describing: nutriScore))
+    }
 }

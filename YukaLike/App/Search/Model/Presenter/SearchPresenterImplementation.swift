@@ -8,9 +8,9 @@
 import Foundation
 
 class SearchPresenterImplementation: SearchPresenter {
-
     private weak var delegate: SearchPresenterDelegate?
     private weak var viewContract: SearchViewContract?
+    private var eanCode: String?
 
     public init(viewContract: SearchViewContract, delegate: SearchPresenterDelegate) {
         self.viewContract = viewContract
@@ -21,7 +21,12 @@ class SearchPresenterImplementation: SearchPresenter {
         viewContract?.display(SearchViewModelMapper().map())
     }
 
-    func didSelectValidate(eanCode: String) {
+    func didSelectValidate() {
+        guard let eanCode = eanCode else { return }
         delegate?.searchPresenterDidRequestProduct(self, eanCode: eanCode)
+    }
+
+    func didEndingEditing(text: String) {
+        self.eanCode = text
     }
 }

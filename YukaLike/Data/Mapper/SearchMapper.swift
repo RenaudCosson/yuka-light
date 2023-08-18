@@ -18,10 +18,11 @@ class SearchMapper {
 
     func map() -> Product {
         // TODO: A modifier car ingredient / id non gerer
-        let noImage = URL(string: "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-15.png")
-        let imageURL = restProduct.imageFrontSmallUrl ?? noImage
+       
+        let imageURL = URL(string: restProduct.imageFrontSmallUrl ?? "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-15.png")
         return Product(
-            title: restProduct.brands ?? "",
+            title: restProduct.brands,
+            nutriScore: restProduct.nutriscoreGrade,
             image: imageURL,
             ingredients: []
         )
