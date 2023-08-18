@@ -24,8 +24,10 @@ public class SearchNetworkRepository: SearchRepository {
 
     public func getProduct(product: String, completion: ((Result<Product, Error>) -> Void)?) {
         let decoder = JSONDecoder()
+        let searchFormatter = product.replacingOccurrences(of: " " , with: "%20")
+        let url = baseURLProvider.baseURL + searchFormatter + Constant.parameters
         session.request(
-            baseURLProvider.baseURL + product.replacingOccurrences(of: " " , with: "%20") + Constant.parameters,
+            url,
             method: .get
         )
         .validate()
