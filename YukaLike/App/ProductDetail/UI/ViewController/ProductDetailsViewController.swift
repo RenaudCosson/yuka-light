@@ -39,12 +39,6 @@ class ProductDetailsViewController: UIViewController {
         title = Constants.pageTile
         view.backgroundColor = .orange
         setupTableView()
-
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
     }
 
     private func setupTableView() {
