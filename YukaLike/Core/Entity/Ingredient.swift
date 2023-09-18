@@ -17,7 +17,7 @@ public struct Ingredient {
     public static let stubs: Ingredient = {
         return Ingredient(
             title: "Mock High fructose corn",
-            subtile: "Mock Haagen-Dazs",
+            subtile: "",
             percent: 42.0,
             imageProduct: URL(string: "https://google.fr")!,
             imageNutriscore: URL(string:"https://google.fr")!

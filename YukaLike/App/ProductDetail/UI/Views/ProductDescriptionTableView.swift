@@ -28,6 +28,7 @@ class ProductDescriptionTableView: UITableViewCell {
     func configure(_ viewModel: ProductDescriptionTableViewModel) {
         self.productNameUILabel.text = viewModel.productNameUILabel
         self.productUIimageView.kf.setImage(with: viewModel.imageProduct)
+        self.subtitleProductUILabel.text = ""
     }
 
     // MARK: - Private
