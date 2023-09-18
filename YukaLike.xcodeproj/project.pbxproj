@@ -250,7 +250,6 @@
 				E688AB4A2A851FC800E34988 /* Data */,
 				E6B38F822A80F28A00C66499 /* Entity */,
 				E6B38F832A80F28F00C66499 /* Interactor */,
-				E6B38F842A80F29500C66499 /* Repositories */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -331,13 +330,6 @@
 				E688AB4F2A85219E00E34988 /* GetProductInteractorImplementation.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		E6B38F842A80F29500C66499 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		E6B38F852A80F2A600C66499 /* Entites */ = {

@@ -7,6 +7,10 @@
 
 import UIKit
 
+private enum Constants {
+    static let color = "customGreen"
+}
+
 class ComfirmedButtonView: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -28,7 +32,7 @@ class ComfirmedButtonView: UIButton {
     // MARK: - Setup
 
     private func setup() {
-        backgroundColor = UIColor(named: "customGreen")
+        backgroundColor = UIColor(named: Constants.color)
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(greaterThanOrEqualToConstant: 44)
             .isActive = true

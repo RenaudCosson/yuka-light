@@ -16,9 +16,10 @@ class ProductDescriptionTableView: UITableViewCell {
     @IBOutlet private var scoreUIimageView: UIImageView!
     @IBOutlet private var subtitleProductUILabel: UILabel!
 
+    // MARK: - ProductDescriptionTableView
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setup()
     }
 
@@ -27,7 +28,6 @@ class ProductDescriptionTableView: UITableViewCell {
     func configure(_ viewModel: ProductDescriptionTableViewModel) {
         self.productNameUILabel.text = viewModel.productNameUILabel
         self.productUIimageView.kf.setImage(with: viewModel.imageProduct)
-//        self.scoreUIimageView.image = viewModel.imageNutriscore
     }
 
     // MARK: - Private

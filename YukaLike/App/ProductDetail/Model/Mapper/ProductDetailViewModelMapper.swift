@@ -18,7 +18,6 @@ class ProductDetailViewModelMapper {
         let viewModel = ProductDescriptionTableViewModel(
             productNameUILabel: product.title,
             imageProduct: product.image
-//            imageNutriscore: product.getNutriscoreImage()
         )
         return .description(viewModel)
     }

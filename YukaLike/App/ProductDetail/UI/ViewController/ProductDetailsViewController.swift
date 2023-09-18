@@ -1,5 +1,12 @@
 import UIKit
 
+private enum Constants {
+    static let pageTile = "Fiche Produit"
+    static let cellName = "ingredient"
+    static let nibName = "ProductDescriptionTableViewCell"
+    static let cellProductName = "title"
+}
+
 class ProductDetailsViewController: UIViewController {
 
     private lazy var tableView = createTableView()
@@ -13,6 +20,8 @@ class ProductDetailsViewController: UIViewController {
         setup()
         presenter?.start()
     }
+    
+    // MARK: - UIView
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,13 +36,9 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Setup
 
     private func setup() {
-        title = "Fiche Produit"
+        title = Constants.pageTile
         view.backgroundColor = .orange
         setupTableView()
-        let button = UIButton()
-        button.setTitle("test", for: .normal)
-
-        view.addSubview(button)
 
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -61,11 +66,11 @@ class ProductDetailsViewController: UIViewController {
 
     private func registerCells() {
         // Programatic
-        tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: "ingredient")
+        tableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: Constants.cellName)
 
         // XIB
-        let nib = UINib(nibName: "ProductDescriptionTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "title")
+        let nib = UINib(nibName: Constants.nibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: Constants.cellProductName)
     }
 
     private func addTableViewConstraints() {
@@ -87,6 +92,8 @@ class ProductDetailsViewController: UIViewController {
 // MARK: - Extension
 
 extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: UITableViewDelegate
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.sectionViewModels.count
@@ -104,13 +111,12 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.sectionViewModels[indexPath.section] {
         case .description(let viewModel):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! ProductDescriptionTableView
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellProductName) as! ProductDescriptionTableView
             cell.configure(viewModel)
-            // TODO: je le laisse ici ou dans le viewmodel ?
             cell.customShadow()
             return cell
         case .product(let cells):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient") as! IngredientTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName) as! IngredientTableViewCell
             cell.configure(cells[indexPath.row])
             return cell
         }
@@ -126,6 +132,9 @@ extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelega
 }
 
 extension ProductDetailsViewController: ProductDetailViewContract {
+    
+    // MARK: - ProductDetailViewContract
+    
     func display(_ viewModel: ProductDetailViewModel) {
         self.viewModel.sectionViewModels = viewModel.sectionViewModels
         tableView.reloadData()

@@ -123,7 +123,6 @@ class SearchViewController: UIViewController {
     
     @objc private func action() {
         presenter?.didSelectValidate()
-//        presenter?.searchPresenterDidScanProduct(self)
     }
 
     

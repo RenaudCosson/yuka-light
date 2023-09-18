@@ -10,10 +10,7 @@ import UIKit
 
 class IngredientTableViewCellMapper {
     public func map(ingredient: Ingredient) -> IngredientTableViewCellModel? {
-        guard let dataProduct = try? Data(contentsOf: ingredient.imageProduct),
-              let dataScore = try? Data(contentsOf: ingredient.imageNutriscore) else {
-            return nil
-        }
+        guard let dataProduct = try? Data(contentsOf: ingredient.imageProduct)
         return IngredientTableViewCellModel(
             title: ingredient.title ,
             percent: ingredient.percent,

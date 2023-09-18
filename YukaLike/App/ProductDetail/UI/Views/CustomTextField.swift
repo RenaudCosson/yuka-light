@@ -47,7 +47,7 @@ class CustomeTextField: UIView, UITextFieldDelegate {
         textField.placeholder = ""
         textField.clearButtonMode = .whileEditing
         // TODO: A delete
-        textField.text = "40052465"
+        textField.text = "coca zero"
 
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: topAnchor, constant: 0),
